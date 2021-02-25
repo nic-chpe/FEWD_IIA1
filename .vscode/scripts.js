@@ -112,3 +112,4 @@ false and displays the result within the console window. The application cannot 
 let x = 30;
 let y = 5;
 alert(x == 30 && y == 50);
+/* The end */
