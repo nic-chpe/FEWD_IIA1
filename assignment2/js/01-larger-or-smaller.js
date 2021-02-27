@@ -8,3 +8,4 @@ if(num1 > num2) {
 } else {
     alert('Both numbers are equal.')
 }
+/*Tested*/
