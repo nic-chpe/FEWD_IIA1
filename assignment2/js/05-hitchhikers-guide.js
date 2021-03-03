@@ -29,6 +29,11 @@ if (play == "yes") {
     // STEP 6
     let rating = parseInt(prompt('The game is now over. Please rate the game on scale of 1 to 10'));
 
+
+    /*
+6.	The game is now over. Ask the user to rate the game between 1 and 10. If the user enters a number not between 1 and 10, thank the user for playing and end the game, If the user enters a number between 6 and 10, thank the user and ask them to play again. If the user enters a number between 1 and 5, thank the user and tell them that you are working hard to improve the game. 
+    */
+
    if(rating > 0 && rating <=10 ){
 
        if(rating>=6){
