@@ -30,5 +30,6 @@ let percentOf = function(num1, num2) {
 percentOf(10,0);
 
 //STEP 4
+let modOf = function()
 
 //STEP 5
