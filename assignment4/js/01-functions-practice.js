@@ -30,6 +30,22 @@ let percentOf = function(num1, num2) {
 percentOf(10,0);
 
 //STEP 4
-let modOf = function()
+let findModulus = function(num1, num2) {
+    let result = (num1%num2);
+    let msg = `${num1} divided by ${num2} has a remainder of ${result}.`;
+    console.log(msg);
+    printMsg = msg;
+
+    return result;
+};
+findModulus(100,8);
 
 //STEP 5
+function sum() {
+    sumofNums = 0;
+    nums = prompt('Enter any amount of numbers separated by commas.').value.split(",");
+    for (i=0; i < nums.length; i++) {
+        sumofNums += parseInt(nums[i]);
+    }
+    return sumofNums;
+};
