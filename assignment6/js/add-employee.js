@@ -1,13 +1,22 @@
 // HANDLE THE LOAD EVENT OF THE WINDOW
 function init() {
-    "use strict";
+    "use strict";  // SET WIDTH AND HEIGHT VARIABLES TO 800 x 700
+    let width = 800;
+    let height = 700;
+    window.resizeTo(width,height); // RESIZE THE POPUP TO THE SET WIDTH AND HEIGHT
+    window.moveTo(((window.screen.width - width) / 2), ((window.screen.height - height) / 2)); // MOVE THE POPUP TO THE MIDDLE OF THE SCREEN
+
+// CREATE A HELPER FUNCTION TO RETRIEVE THE HTML ELEMENTS FROM THE DOM
+    let addEmployee = window.document.getElementById("btnAddEmployee");
+    login.addEventListener("click", function () {
+    let id = window.document.getElementById("id").value;
+    let name = window.document.getElementById("name").value;
+    let ext = window.document.getElementById("ext").value;
+    let dept = window.document.getElementById("dept").value;
+    let output = window.opener.document.getElementById("logindetails");    
+    });
 }
 window.addEventListener("load", init);
-// SET WIDTH AND HEIGHT VARIABLES TO 800 x 700
-
-// RESIZE THE POPUP TO THE SET WIDTH AND HEIGHT
-
-// MOVE THE POPUP TO THE MIDDLE OF THE SCREEN
 
 // CREATE A HELPER FUNCTION TO RETRIEVE THE HTML ELEMENTS FROM THE DOM
 

@@ -1,5 +1,4 @@
 // HANDLE THE LOAD EVENT OF THE WINDOW
-window.addEventListener("load", init);
 // HANDLE THE CLICK EVENT FOR THE BTNADDEMPLOYEE BUTTON
 function init() {
     "use strict";
@@ -9,3 +8,4 @@ function init() {
         window.open("add-employee.html", "btnAddEmployee", "width=400,height=800");
     });
 }
+window.addEventListener("load", init);
