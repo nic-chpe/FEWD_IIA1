@@ -8,4 +8,6 @@ function init() {
         window.open("add-employee.html", "btnAddEmployee", "width=400,height=800");
     });
 }
-window.addEventListener("load", init);
+window.addEventListener('load', () => {
+    
+});
