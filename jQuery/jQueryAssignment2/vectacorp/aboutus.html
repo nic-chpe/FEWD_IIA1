@@ -7,18 +7,35 @@
 	<link rel="stylesheet" href="css/base.css">
 	<link rel="stylesheet" href="css/skeleton.css">
 	<link rel="stylesheet" href="css/layout.css">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 
-	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.12.1.min.js"></script>
+	<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script src="js/jquery.mobilemenu.js"></script>
 	<script>
 		$(document).ready(function(){
 			$('#responsive-menu').mobileMenu();
+
+				// Tooltip
+				$( document ).tooltip();
+
+				// Our Solution Tabs
+				$( "#tabs" ).tabs().addClass( "ui-tabs-vertical ui-helper-clearfix" );
+    			$( "#tabs li" ).removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
 		});
 	</script>
+	<style>
+		.ui-tabs-vertical { width: 55em; }
+  		.ui-tabs-vertical .ui-tabs-nav { padding: .2em .1em .2em .2em; float: left; width: 12em; }
+  		.ui-tabs-vertical .ui-tabs-nav li { clear: left; width: 100%; border-bottom-width: 1px !important; border-right-width: 0 !important; margin: 0 -1px .2em 0; }
+  		.ui-tabs-vertical .ui-tabs-nav li a { display:block; }
+  		.ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active { padding-bottom: 0; padding-right: .1em; border-right-width: 1px; }
+  		.ui-tabs-vertical .ui-tabs-panel { padding: 1em; float: right; width: 40em;}
+	</style>
 </head>
 <body>
 	<main class="container">
@@ -28,11 +45,11 @@
 		
 		<nav class="thirteen columns">
 			<ul id="responsive-menu">
-				<li><a href="index.html">Home</a></li>
-				<li><a href="aboutus.html">About Us</a></li>
-				<li><a href="solutions.html">Solutions</a></li>
-				<li><a href="support.html">Support</a></li>
-				<li><a href="contactus.html">Contact Us</a></li>
+				<li><a href="index.html" title="Our Homepage">Home</a></li>
+				<li><a href="aboutus.html" title="Learn about our success story">About Us</a></li>
+				<li><a href="solutions.html" title="The products we stand behind">Solutions</a></li>
+				<li><a href="support.html" title="Find answers to your questions">Support</a></li>
+				<li><a href="contactus.html" title="Connect with us">Contact Us</a></li>
 			</ul>
 		</nav>
 		
@@ -52,7 +69,42 @@
             <h4>Management Team</h4>
             
             <!-- INSERT VERTICAL TABS HERE -->
-            
+            <div id="tabs">
+				<ul>
+				  <li><a href="#tabs-1">Agnes</a></li>
+				  <li><a href="#tabs-2">Damon</a></li>
+				  <li><a href="#tabs-3">Herbert</a></li>
+				  <li><a href="#tabs-4">Mike</a></li>
+				  <li><a href="#tabs-5">Wilbur</a></li>
+
+				</ul>
+				<div id="tabs-1">
+				  <h4>Agnes, Vice President, Accounting </h4>
+				  <p>With over 14 years of public accounting and business advisory service experience in the Tongas, Ecuador, Canada, Botswana and the US, Agnes is the most seasoned and diversed member of the Vecta Corp. team.
+				</p>
+				</div>
+				<div id="tabs-2">
+				  <h4>Damon, Director of Development</h4>
+				  <p>Damon is the Director of Development for Vecta Corp. Damon creates learning materials for Vecta Corp. as well as consulting for customers to integrate vSolutions into their production pipeline and business processes. Vecta Corp. is creating the next revolution of digital media applications that incorporates 2D, 3D, sound, and video into a single multimedia presentations that can be distributed on the Web, CD/DVD-ROM, Kiosks, or intranet environments.
+				</p>
+				</div>
+				<div id="tabs-3">
+				  <h4>Herbert, Director of Human Resources</h4>
+				  <p>Herbert joined Vecta Corp. in October 1999 as Vecta Corp's first Human Resources Director. As such, he has overall human resources responsibility for Vecta Corp's operations worldwide and is based at the company's global headquarters in San Diego. Although responsible for Vecta Corp's human resources strategies globally, Herbert's work is directly focused on assuring complete employee satisfaction and loyalty.
+				</p>
+				</div>
+				<div id="tabs-4">
+					<h4>Mike, Vicepesident, Sales and Marketing</h4>
+					<p>Mike serves as the Vice President of Sales and Marketing for Vecta Corp. In this role Mike oversees Vecta Corp's marketing and corporate communications efforts worldwide. Mike joined Vecta Corp. in early 1998 and worked in business development roles prior to being assigned to lead Vecta Corp's global vSolutions sales and marketing team in the summer of 2000. He initiated Vecta Corp's global branding and marketing campaigns as vSolutions global director and then Vice President of Marketing. In 2001, his role expanded to include overall responsibility for corporate marketing, sales, and communications.
+
+				  </p>
+				  </div>
+				  <div id="tabs-5">
+					<h4>Wilbur, Founder and CEO</h4>
+					<p>Herbert joined Vecta Corp. in October 1999 as Vecta Corp's first Human Resources Director. As such, he has overall human resources responsibility for Vecta Corp's operations worldwide and is based at the company's global headquarters in San Diego. Although responsible for Vecta Corp's human resources strategies globally, Herbert's work is directly focused on assuring complete employee satisfaction and loyalty.
+				  </p>
+				  </div>
+			  </div>
             <h4>Our New Headquarters</h4>
             
             <!-- INSERT CYCLE 2 HERE -->

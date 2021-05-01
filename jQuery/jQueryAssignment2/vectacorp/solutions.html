@@ -7,17 +7,83 @@
 	<link rel="stylesheet" href="css/base.css">
 	<link rel="stylesheet" href="css/skeleton.css">
 	<link rel="stylesheet" href="css/layout.css">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 
-	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.12.1.min.js"></script>
+	<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 	<script src="js/jquery.mobilemenu.js"></script>
+
+	<style>
+		#navbar {
+		overflow: hidden;
+		background-color: #333;
+		}
+
+		#navbar a {
+		float: left;
+		display: block;
+		color: #f2f2f2;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+		font-size: 17px;
+		}
+
+		#navbar a:hover {
+		background-color: #ddd;
+		color: black;
+		}
+
+		#navbar a.active {
+		background-color: #04AA6D;
+		color: white;
+		}
+
+		.content {
+		padding: 16px;
+		}
+
+		.sticky {
+		position: fixed;
+		top: 0;
+		width: 100%;
+		}
+
+		.sticky + .content {
+		padding-top: 600px;
+		}
+	</style>
+
 	<script>
 		$(document).ready(function(){
 			$('#responsive-menu').mobileMenu();
+
+				// Tooltip
+				$( document ).tooltip();
+
+				// sticky nav
+				window.onscroll = function() {myFunction()};
+
+				var navbar = document.getElementById("quickNav");
+				var sticky = navbar.offsetTop;
+
+				function myFunction() {
+					if (window.pageYOffset >= sticky) {
+						navbar.classList.add("sticky")
+					} else {
+						navbar.classList.remove("sticky");
+					}
+				}
+
+
 		});
+
+			
 	</script>
 </head>
 <body>
@@ -28,11 +94,11 @@
 		
 		<nav class="thirteen columns">
 			<ul id="responsive-menu">
-				<li><a href="index.html">Home</a></li>
-				<li><a href="aboutus.html">About Us</a></li>
-				<li><a href="solutions.html">Solutions</a></li>
-				<li><a href="support.html">Support</a></li>
-				<li><a href="contactus.html">Contact Us</a></li>
+				<li><a href="index.html" title="Our Homepage">Home</a></li>
+				<li><a href="aboutus.html" title="Learn about our success story">About Us</a></li>
+				<li><a href="solutions.html" title="The products we stand behind">Solutions</a></li>
+				<li><a href="support.html" title="Find answers to your questions">Support</a></li>
+				<li><a href="contactus.html" title="Connect with us">Contact Us</a></li>
 			</ul>
 		</nav>
 		
@@ -42,15 +108,87 @@
 		
 		<section id="welcome" class="eleven columns">
 			<h4>Our Solutions</h4>
+			<section id="vProspect2-0">
+			<h5>vProspect 2.0</h5>
+
+						<p>Define and research your target audience, define your strategy to reach that audience and present a strong and memorable brand to that audience. vProspect can help your business:
+
+						Define your target audience and competition.
+
+						Research your competition and your target audience's behavior, needs, technical know-how level, etc.
+
+						Establish a conceptual and visual identity that corresponds to the defined direction of the company.
+
+						Ensure consistency across all media.
+
+						Establish corporate guidelines for cohesiveness of any future developments.
+
+						Define and/or re-defining your service and/or product offerings.
+
+						Define expansion plans and strategies.
+
+						Implement Search Engine Optimization of all Online materials.
+						</p>
+			</section>			
+			<a href="#">Back to top</a>
+			<section id="vConvert2-0">		
+			<h5>vConvert 2.0</h5>
+
+						<p>Create a highly user-friendly and easy-to-navigate information architecture that will help your prospects interact with the company on a highly interactive level. vConvert can help your business:
+
+						Build a visual and functional user front end that focuses exclusively on providing an exceptional user experience while conveying company, service and product information.
+
+						Cause the desired emotional response in a user to facilitate conversion to a client.
+
+						Build sites that move beyond merely conveying information. They advertise, motivate, excite and inspire. Users are more likely to remember and recommend your site.
+
+						Research your target audience's behavior, needs, technical know-how and level, etc.
+
+						Develop any applicable back-end programs to facilitate user interaction with the company and offerings on a highly functional level to allow any kind of online transactions and a completely centralized information collection and access point, accessible from any location.
+
+						Create an architecture to display the site content and information in a logical and easy to access manner. Facilitating thereby the desired ease, for the user to find what they are looking for quickly and easily. Allowing the user to focus on the subject at hand rather than searching for information on the site.
+						</p>
+			</section>				
+
+			<a href="#">Back to top</a>
+
+							
+			<section id="vRetain1-0">
+				<h5>vRetain 1.0</h5>
+
+						<p>Build on existing customer relationships to improve productivity and maximize customer loyalty, while growing revenues. vRetain can help your business:
+
+						Streamline existing business infrastructures by utilizing technology for automation, information centralization, and information sharing among all business units and departments, as well as efficient prospect & customer tracking and interaction within the company.
+
+						Collect crucial information, data and statistics that allow a company to keep in touch with users in a very customized, highly targeted way.
+
+						Analyze site visitor behavior through traffic analysis, usability studies and interactive polling. Recommending and making site and application adjustments to improve usability and user experience.
+						</p>
+			</section>
+			<a href="#">Back to top</a>
 
 			<p>&nbsp;</p>
 		</section>
-		
-		<section id="testimonials" class="five columns">
-			<h4>Quick Nav</h4>
 
-			<!-- INSERT ACCORDION HERE -->
-		</section>
+			<section id="testimonials" class="five columns">
+				<h4>Quick Nav</h4>
+				<!-- <nav id="quickNavli">
+					<ul>
+						<li><a href="#vProspect2-0">vProspect2.0</a></li>
+						<li><a href="#vConvert2-0">vConvert2.0</a></li>
+						<li><a href="#vRetain1-0">vRetain1.0</a></li>
+					</ul>
+				</nav> -->
+
+				<div id="quickNav">
+					<a class="active" href="#vProspect2-0">vProspect2.0</a>
+					<a href="#vConvert2-0">vConvert2.0</a>
+					<a href="#vRetain1-0">vRetain1.0</a>
+				</div>
+
+				<!-- INSERT ACCORDION HERE -->
+			</section>
+		
 	</main>
 </body>
 </html>

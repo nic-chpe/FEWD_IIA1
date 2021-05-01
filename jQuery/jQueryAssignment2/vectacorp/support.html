@@ -7,16 +7,21 @@
 	<link rel="stylesheet" href="css/base.css">
 	<link rel="stylesheet" href="css/skeleton.css">
 	<link rel="stylesheet" href="css/layout.css">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 
-	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.12.1.min.js"></script>
+	<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script src="js/jquery.mobilemenu.js"></script>
 	<script>
 		$(document).ready(function(){
 			$('#responsive-menu').mobileMenu();
+
+			// Tooltip
+			$( document ).tooltip();
 		});
 	</script>
 </head>
@@ -28,11 +33,11 @@
 		
 		<nav class="thirteen columns">
 			<ul id="responsive-menu">
-				<li><a href="index.html">Home</a></li>
-				<li><a href="aboutus.html">About Us</a></li>
-				<li><a href="solutions.html">Solutions</a></li>
-				<li><a href="support.html">Support</a></li>
-				<li><a href="contactus.html">Contact Us</a></li>
+				<li><a href="index.html" title="Our Homepage">Home</a></li>
+				<li><a href="aboutus.html" title="Learn about our success story">About Us</a></li>
+				<li><a href="solutions.html" title="The products we stand behind">Solutions</a></li>
+				<li><a href="support.html" title="Find answers to your questions">Support</a></li>
+				<li><a href="contactus.html" title="Connect with us">Contact Us</a></li>
 			</ul>
 		</nav>
 		
