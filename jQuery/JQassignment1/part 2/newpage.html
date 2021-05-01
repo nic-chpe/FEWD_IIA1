@@ -4,10 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="scripts/jquery.js"></script>
+    <style>
+        button          {width: 100px;}
+        #buttonUno      {background-color: orange;}
+        #buttonDos      {background-color: plum;}
+        #buttonTres     {background-color: salmon}
+        #buttonCuatro   {background-color: cornflowerblue;}
+        #buttonCinco    {background-color: yellow;}
+        div             {background-color: aqua;} 
+        h2              {text-align: center; padding-top: 100px;}
+    </style>
 </head>
 <body>
     <main>
-        <button>Click Me!</button>
+        <button id="buttonUno">Click Me!</button>
+        <button id="buttonDos">Click Me!</button>
+        <button id="buttonTres">Click Me!</button>
     </main>
+    <br><br>
+    <section>
+        <button id="buttonCuatro">Click Me!</button>
+        <button id="buttonCinco">Click Me!</button>
+            <div>
+                <h2>Hello World!</h2>
+            </div>
+            <div>
+                <span></span>
+            </div>
+    </section>
 </body>
+<script type="text/javascript">
+
+$(function(){
+//window.alert("hello!");
+    //16
+    $('#buttonUno').click(function () {
+        window.alert("Button has been clicked!");
+    });
+
+    //17
+    $('#buttonDos').bind('click', function () { 
+        window.alert("Button has been clicked!");
+    });
+
+    //18
+    $('#buttonTres').on('click', function () { 
+        window.alert("Button has been clicked!");
+    });
+
+    //19
+    $(function () {
+        $('section').on({
+            click: function() {
+                window.alert("Button has been clicked!");
+            }
+        }, 'button');
+    });
+
+    //20 mousenter, mouseleave on method
+        $('div').width('400px').height('400px');
+       
+
+            $('body').on('mouseenter mouseleave', 'div', function() {
+                window.alert("Mouse entered, left or clicked!");
+            });
+    // 21 
+});
+
+</script>
 </html>
