@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yuyumei Pizza</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
@@ -21,7 +22,7 @@
     <div class="jumbotron center-block">
         <h1>In the Mood for Pizza</h1>
         <p class="lead"> All of our Artisanal Pizzas are made fresh to order and delivered in under 30 minutes!</p>
-        <p>*Currently we're only accepting delivery orders placed online, sorry for the inconvenience.</p>
+        <p class="current">*Currently we're only accepting delivery orders placed online, sorry for the inconvenience.</p>
         <button type="button" class="btn btn-lg btn-info" data-toggle="modal" data-target="#deliveryModal">Delivery</button>
         <button type="button" class="btn btn-lg btn-info" disabled>Carry Out
         </a></button>
@@ -118,8 +119,8 @@
                                         </div>
                                       </fieldset>
                                 <div class="modal-footer">
-                                <button class="btn btn-success" type="submit" value="submit" name="submitDough" id="submitDough" onclick="$('#myCarousel').carousel('next')">Continue to Size Options <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next" >
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <button class="btn btn-success btnNext" type="submit" value="submit" name="submitDough" id="submitDough" onclick="$('#myPanel').parent('next')">Continue to Size Options <a href="#headingTwo" role="button" data-toggle="next" >
+                                    <span class="panel-control-next-panel" aria-hidden="true"></span>
                                     <span class="sr-only">Next</span>
                                     </a></button>
                                 </div>
@@ -150,11 +151,11 @@
                               </select>
                                 </fieldset>
                             <div class="modal-footer">
-                            <button id="clearBtn" class="btn btn-default" type="button" onclick="$('#myCarousel').carousel('prev')">Back to Dough Option<a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev" >
+                            <button id="clearBtn" class="btn btn-default btnPrevious" type="button" onclick="$('#myPanel').parent('prev')">Back to Dough Option<a href="#headingTwo" role="button" data-toggle="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Back to Dough Option</span>
                                         </a></button>
-                                <button class="btn btn-success" type="submit" value="submit" name="submitSize" id="submitSize" onclick="$('#myCarousel').carousel('next')">Continue to Cheese Option <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next" >
+                                <button class="btn btn-success btnNext" type="submit" value="submit" name="submitSize" id="submitSize" onclick="$('#myPanel').parent('next')">Continue to Cheese Option <a href="#headingThree" role="button" data-toggle="next" >
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Next</span>
                                 </a></button>
@@ -187,11 +188,11 @@
                                   </select>
                                 </fieldset>
                               <div class="modal-footer">
-                                  <button class="btn btn-default" type="button" onclick="">Back to Size Option<a class="tab-control-prev" href="#myTabs" role="button" data-slide="prev" >
+                                  <button class="btn btn-default btnPrevious" type="button" onclick="">Back to Size Option<a class="tab-control-prev" href="#headingThree" role="button" data-toggle="prev" >
                                   <span class="tabs-control-prev-icon" aria-hidden="true"></span>
                                   <span class="sr-only">Previous</span>
                                         </a></button>
-                              <button class="btn btn-success" type="submit" value="submit" name="submitCheese" id="submitCheese" onclick="$('#myCarousel').carousel('next')">Continue to Sauce Option <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next" >
+                              <button class="btn btn-success btnNext" type="submit" value="submit" name="submitCheese" id="submitCheese" onclick="$('#mytab').parent('next')">Continue to Sauce Option <a href="#myPanels" role="button" data-toggle="next" >
                                   <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                   <span class="sr-only">Next</span>
                                   </a></button>
@@ -209,237 +210,115 @@
                             </a>
                         </h4>
                     </div>
-                    <div id="Size" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                    <div id="Sauce" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
                         <div class="panel-body">
-                            <form id="sizeOptionForm" name="sizeOption" action="javascript:window.console.log('success! sizeOption');" method="post">
+                            <form id="sauceOption" name="sauceOption" action="javascript:window.console.log('success! sauceOption');" method="post">
                                 <fieldset class="form-group">
-                             <legend>Choose your Size</legend>
-                              <label for="sizeOption">Small feeds 1P, Medium 2P, Large 3P, XL 4P</label>
-                              <select class="form-control" id="sizeOption">
-                                  <option selected disabled name="!valid">Size...</option>
-                                  <option name="size" value="small">Small</option>
-                                  <option name="size" value="medium">Medium</option>
-                                  <option name="size" value="large">Large</option>
-                                  <option name="size" value="exLarge">Ex-Large</option>
-                              </select>
+                                 <legend>Sauce Options</legend>
+                                  <label for="sauceOption">Sauce Option</label>
+                                  <select class="form-control" id="sauceOption">
+                                      <option selected disabled>sauce...</option>
+                                      <option name="sauce" value="regular">Regular Tomato: No Charge</option>
+                                      <option name="sauce" value="hearty">Hearty Tomato: +$.99</option>
+                                      <option name="sauce" value="bbq">BBQ Sauce: +$1.99</option>
+                                  </select>
                                 </fieldset>
-                            <div class="modal-footer">
-                            <button id="clearBtn" class="btn btn-default" type="button" onclick="$('#myCarousel').carousel('prev')">Back to Dough Option<a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev" >
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Back to Dough Option</span>
+                                <div class="modal-footer">
+                                <button class="btn btn-default btnPrevious" type="button" onclick="$('#myPanel').parent('prev')">Back to Cheese Option<a href="#myPanel" role="button" data-toggle="prev" >
+                                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                  <span class="sr-only">Previous</span>
                                         </a></button>
-                                <button class="btn btn-success" type="submit" value="submit" name="submitSize" id="submitSize" onclick="$('#myCarousel').carousel('next')">Continue to Cheese Option <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next" >
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                                </a></button>
-                            </div>
-                            </form>
+                              <button class="btn btn-success btnNext" type="submit" value="submit" name="submitSauce" id="submitSauce" onclick="$('#myPanel').parent('next')">Continue to Topping Options <a href="#myPanel" role="button" data-toggle="next" >
+                                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                  <span class="sr-only">Next</span>
+                                  </a></button>
+                                  </div>
+                              </form>                        
                         </div>
-                    </div>                
-                </div>
-
-
-
-
-
-
-
-
-
-      <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner" role="listbox">
-    <div role="listbox">  <!--STEP ONE-->
-         <section class="item active">
-             <form id="doughOption" name="doughOption" action="javascript:window.console.log('success! doughOption');" method="post">
-              <fieldset class="form-group">
-                  <legend>Dough Options</legend>
-                      <div class="form-check">
-                        <label class="form-check-label">
-                          <input type="radio" class="form-check-input" name="dough" id="dough" value="handToss" >
-                          Hand Tossed
-                        </label>
-                      </div>
-                      <div class="form-check">
-                          <label class="form-check-label">
-                              <input type="radio" class="form-check-input" name="dough" id="dough" value="thinCrust">
-                              Thin Crust
-                          </label>
-                      </div>
-                      <div class="form-check">
-                          <label class="form-check-label">
-                              <input type="radio" class="form-check-input" name="dough" id="dough" value="nyStyle">
-                              New York Style
-                          </label>
-                      </div>
-                      <div class="form-check">
-                          <label class="form-check-label">
-                              <input type="radio" class="form-check-input" name="dough" id="dough" value="glutenFree">
-                              Gluten Free
-                          </label>
-                      </div>
-                    </fieldset>
-         <div class="modal-footer">
-              <button class="btn btn-success" type="submit" value="submit" name="submitDough" id="submitDough" onclick="$('#myCarousel').carousel('next')">Continue to Size Options <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next" >
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Next</span>
-                  </a></button>
-          </div>
-          </form>
-      </section>
-<!--STEP TWO-->
-      <section class="item">
-              <form id="sizeOptionForm" name="sizeOption" action="javascript:window.console.log('success! sizeOption');" method="post">
-                <fieldset class="form-group">
-             <legend>Size Options</legend>
-              <label for="sizeOption">Size Option</label>
-              <select class="form-control" id="sizeOption">
-                  <option selected disabled name="!valid">Size...</option>
-                  <option name="size" value="small">Small</option>
-                  <option name="size" value="medium">Medium</option>
-                  <option name="size" value="large">Large</option>
-                  <option name="size" value="exLarge">Ex-Large</option>
-              </select>
-                </fieldset>
-          <div class="modal-footer">
-          <button id="clearBtn" class="btn btn-default" type="button" onclick="$('#myCarousel').carousel('prev')">Back to Dough Option<a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev" >
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Back to Dough Option</span>
-                    </a></button>
-             <button class="btn btn-success" type="submit" value="submit" name="submitSize" id="submitSize" onclick="$('#myCarousel').carousel('next')">Continue to Cheese Option <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next" >
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-              </a></button>
-          </div>
-              </form>
-      </section>
-<!--STEP THREE-->
-      <section class="item">
-          <form id="cheeseOptions" name="cheeseOptions" action="javascript:window.console.log('success! cheeseOptions');" method="post">
-            <fieldset class="form-group">
-             <legend>Cheese Options</legend>
-              <label for="cheeseOption">Cheese Option</label>
-              <select class="form-control" id="cheeseOption">
-                  <option selected disabled>Cheese...</option>
-                  <option name="cheese" value="light">Light: No Charge</option>
-                  <option name="cheese" value="normal">Normal: No Charge</option>
-                  <option name="cheese" value="extra">Extra: +$2.99</option>
-                  <option name="cheese" value="double">Double: +$3.99</option>
-              </select>
-            </fieldset>
-          <div class="modal-footer">
-            <button class="btn btn-default" type="button" onclick="$('#myCarousel').carousel('prev')">Back to Size Option<a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev" >
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-                    </a></button>
-          <button class="btn btn-success" type="submit" value="submit" name="submitCheese" id="submitCheese" onclick="$('#myCarousel').carousel('next')">Continue to Sauce Option <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next" >
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-              </a></button>
-              </div>
-          </form>
-      </section>
-<!--STEP FOUR-->
-      <section class="item">
-          <form id="sauceOption" name="sauceOption" action="javascript:window.console.log('success! sauceOptions');" method="post">
-            <fieldset class="form-group">
-             <legend>Sauce Options</legend>
-              <label for="sauceOption">Sauce Option</label>
-              <select class="form-control" id="sauceOption">
-                  <option selected disabled>sauce...</option>
-                  <option name="sauce" value="regular">Regular Tomato: No Charge</option>
-                  <option name="sauce" value="hearty">Hearty Tomato: +$.99</option>
-                  <option name="sauce" value="bbq">BBQ Sauce: +$1.99</option>
-              </select>
-            </fieldset>
-            <div class="modal-footer">
-            <button class="btn btn-default" type="button" onclick="$('#myCarousel').carousel('prev')">Back to Cheese Option<a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev" >
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-                    </a></button>
-          <button class="btn btn-success" type="submit" value="submit" name="submitSauce" id="submitSauce" onclick="$('#myCarousel').carousel('next')">Continue to Topping Options <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next" >
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-              </a></button>
-              </div>
-          </form>
-      </section>
-<!--STEP FIVE-->
-      <section class="item">
-          <form id="toppingOption" name="toppingOption" action="javascript:window.console.log('success! toppingOptions');" method="post">
-            <fieldset class="form-check">
-             <legend>Topping Options</legend>
-                  <label class="form-check-label">
-                      <input class="form-check-input" type="checkbox" value="0.99|Pepperoni" name="topping">
-                  Pepperoni
-                  </label>
-                  <label class="form-check-label">
-                      <input class="form-check-input" type="checkbox" value="0.99|Sausage" name="topping">
-                  Sausage
-                  </label>
-                  <label class="form-check-label">
-                      <input class="form-check-input" type="checkbox" value="0.99|Ham" name="topping">
-                  Ham
-                  </label>
-                  <label class="form-check-label">
-                      <input class="form-check-input" type="checkbox" value="0.99|Bacon" name="topping">
-                  Bacon
-                  </label>
-                  <label class="form-check-label">
-                      <input class="form-check-input" type="checkbox" value="0.99|Salami" name="topping">
-                  Salami
-                  </label><br>
-                  <label class="form-check-label">
-                      <input class="form-check-input" type="checkbox" value="0.99|Peppers" name="topping">
-                  Peppers
-                  </label>
-                  <label class="form-check-label">
-                      <input class="form-check-input" type="checkbox" value="0.99|Olives" name="topping">
-                  Olives
-                  </label>
-                  <label class="form-check-label">
-                      <input class="form-check-input" type="checkbox" value="0.99|Jalapenos" name="topping">
-                  Jalapenos
-                  </label>
-                  <label class="form-check-label">
-                      <input class="form-check-input" type="checkbox" value="0.99|Mushrooms" name="topping">
-                  Mushrooms
-                  </label>
-                  <label class="form-check-label">
-                      <input class="form-check-input" type="checkbox" value="0.99|Pineapple" name="topping">
-                  Pineapple
-                  </label>
-                  <label class="form-check-label">
-                      <input class="form-check-input" type="checkbox" value="0.99|Onion" name="topping">
-                  Onion
-                  </label>
-          </fieldset>
-          <div class="modal-footer">
-          <button class="btn btn-default" type="button" value="button" name="button" onclick="$('#myCarousel').carousel('prev')">Back to Sauce Options<a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev" >
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-                    </a></button>
-          <button class="btn btn-default" type="button" onclick="$('#myCarousel').carousel('next')">Return to Beginning <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next" >
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-              </a></button>
-          <button class="btn btn-success" type="submit" value="submit" name="submitToppings" id="submitToppings">Save Order<a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev" >
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Save Order</span>
-                    </a></button>
-              </div>
-          </form>
-      </section>
-      
-</div><!--END CAROUSEL CONTENT-->
+                    </div>
+                </div>   
+                <!--Topping Options--> 
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingFive">
+                        <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#Toppings" aria-expanded="false" aria-controls="Toppings">
+                                Topping Options
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="Toppings" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+                        <div class="panel-body">
+                            <form id="toppingOption" name="toppingOption" action="javascript:window.console.log('success! toppingOption');" method="post">
+                                <fieldset class="form-check">
+                                 <legend>Topping Options</legend>
+                                      <label class="form-check-label">
+                                          <input class="form-check-input" type="checkbox" value="0.99|Pepperoni" name="topping">
+                                      Pepperoni
+                                      </label>
+                                      <label class="form-check-label">
+                                          <input class="form-check-input" type="checkbox" value="0.99|Sausage" name="topping">
+                                      Sausage
+                                      </label>
+                                      <label class="form-check-label">
+                                          <input class="form-check-input" type="checkbox" value="0.99|Ham" name="topping">
+                                      Ham
+                                      </label>
+                                      <label class="form-check-label">
+                                          <input class="form-check-input" type="checkbox" value="0.99|Bacon" name="topping">
+                                      Bacon
+                                      </label>
+                                      <label class="form-check-label">
+                                          <input class="form-check-input" type="checkbox" value="0.99|Salami" name="topping">
+                                      Salami
+                                      </label><br>
+                                      <label class="form-check-label">
+                                          <input class="form-check-input" type="checkbox" value="0.99|Peppers" name="topping">
+                                      Peppers
+                                      </label>
+                                      <label class="form-check-label">
+                                          <input class="form-check-input" type="checkbox" value="0.99|Olives" name="topping">
+                                      Olives
+                                      </label>
+                                      <label class="form-check-label">
+                                          <input class="form-check-input" type="checkbox" value="0.99|Jalapenos" name="topping">
+                                      Jalapenos
+                                      </label>
+                                      <label class="form-check-label">
+                                          <input class="form-check-input" type="checkbox" value="0.99|Mushrooms" name="topping">
+                                      Mushrooms
+                                      </label>
+                                      <label class="form-check-label">
+                                          <input class="form-check-input" type="checkbox" value="0.99|Pineapple" name="topping">
+                                      Pineapple
+                                      </label>
+                                      <label class="form-check-label">
+                                          <input class="form-check-input" type="checkbox" value="0.99|Onion" name="topping">
+                                      Onion
+                                      </label>
+                              </fieldset>
+                              <div class="modal-footer">
+                              <button class="btn btn-default btnPrevious" type="button" value="button" name="button" onclick="$('#myPanel').parent('prev')">Back to Sauce Options<a href="#headingFour" role="button" data-toggle="prev" >
+                                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                  <span class="sr-only">Previous</span>
+                                        </a></button>
+                              <button class="btn btn-default btnNext" type="button" onclick="$('#myCarousel').parent('next')">Return to Beginning <a href="#headingFive" role="button" data-toggle="next" >
+                                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                  <span class="sr-only">Next</span>
+                                  </a></button>
+                              <button class="btn btn-success" type="submit" value="submit" name="submitToppings" id="submitToppings">Save Order<a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev" >
+                                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                  <span class="sr-only">Save Order</span>
+                                        </a></button>
+                                  </div>
+                              </form>              
+                        </div>
+                    </div>
+                </div>   
+<!--END TABS CONTENT-->
  
 </div>
-</section>
-
-   
-
-
   <!-- CHECK OUT Button trigger modal -->
-  <button type="button" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#checkOutModal" data-whatever="">Check Out</button>
+  <button type="button" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#" data-whatever="">Check Out</button>
   <!--MODAL-->
    <div class="modal fade" id="checkOutModal" tabindex="-1" role="dialog" aria-labelledby="checkOutModallLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -549,6 +428,7 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="SCRIPTS/scripts.js"></script>
 </body>
 </html>
 </body>
